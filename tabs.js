@@ -5,6 +5,11 @@ function ready() {
         tabsContent = document.getElementsByClassName('tabs__item'),
         hasClass = buttons[this.num].classList.contains('tabs__controls-link-active');
 
+    if (buttons.length !== tabsContent.length) {
+      console.error('Number of arrows and tabs must be equal! Check it!');
+      return
+    }
+
     if (hasClass) { return }
 
     for ( var i = 0; i < tabsContent.length; i++) {
